@@ -1,0 +1,10 @@
+services:
+  api-flask:
+    build: .
+    image: houlal-api-ann:latest
+    environment:
+      - MODEL_PATH=/models/iris_ann_model.h5
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./iris_ann_model.h5:/models/iris_ann_model.h5:ro
